@@ -1,17 +1,17 @@
 package ru.shop.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class Product {
-    UUID id;
-    String name;
-    long cost;
-    ProductType productType;
+    private UUID id;
+    private String name;
+    private long cost;
+    private ProductType productType;
 }

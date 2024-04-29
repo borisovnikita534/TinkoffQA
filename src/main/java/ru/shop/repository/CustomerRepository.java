@@ -1,10 +1,17 @@
 package ru.shop.repository;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import ru.shop.model.Customer;
+import ru.shop.model.Order;
+import ru.shop.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
+@Component
 public class CustomerRepository implements IRepository<Customer> {
 
     List<Customer> customers = new ArrayList<>();
@@ -17,5 +24,12 @@ public class CustomerRepository implements IRepository<Customer> {
     @Override
     public List<Customer> findAll() {
         return customers;
+    }
+
+    @Override
+    public Optional<Customer> findById(UUID id) {
+        return findAll().stream()
+                .filter(customer -> customer.getId().equals(id))
+                .findFirst();
     }
 }
