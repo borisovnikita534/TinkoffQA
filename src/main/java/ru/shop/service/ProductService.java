@@ -8,7 +8,6 @@ import ru.shop.exception.EntityNotFoundException;
 import ru.shop.model.Order;
 import ru.shop.model.Product;
 import ru.shop.model.ProductType;
-import ru.shop.repository.IRepository;
 import ru.shop.repository.ProductRepository;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ProductService {
 
-    private final IRepository<Product> repository;
+    private final ProductRepository repository;
     private final ProductRepository productRepository;
 
 

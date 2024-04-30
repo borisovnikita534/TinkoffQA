@@ -6,7 +6,6 @@ import ru.shop.exception.BadOrderCountException;
 import ru.shop.model.Customer;
 import ru.shop.model.Order;
 import ru.shop.model.Product;
-import ru.shop.repository.IRepository;
 import ru.shop.repository.OrderRepository;
 
 import java.util.ArrayList;

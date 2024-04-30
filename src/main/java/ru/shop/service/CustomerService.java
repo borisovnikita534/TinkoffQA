@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.shop.exception.EntityNotFoundException;
 import ru.shop.model.Customer;
-import ru.shop.repository.IRepository;
+import ru.shop.repository.CustomerRepository;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +13,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CustomerService {
 
-    private final IRepository<Customer> repository;
+    private final CustomerRepository repository;
 
     public void save(Customer customer) {
         repository.save(customer);

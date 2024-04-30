@@ -1,10 +1,9 @@
 package ru.shop.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.shop.model.Customer;
+import ru.shop.model.Product;
 import ru.shop.service.CustomerService;
 
 import java.util.List;
@@ -21,5 +20,8 @@ public class CustomerController {
         return customerService.findAll();
     }
 
-
+    @PostMapping
+    public void save(@RequestBody Customer customer) {
+        customerService.save(customer);
+    }
 }
